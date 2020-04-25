@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <text-set-from v-if="step === 1" @submit="showData" />
+    <show-text-view v-show="step == 2" ref="showTextView" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TextSetFrom from "./components/TextSetFrom";
+import ShowTextView from "./components/ShowTextView";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    TextSetFrom,
+    ShowTextView,
+  },
+  data() {
+    return {
+      step: 1,
+    };
+  },
+  mounted() {
+
+  },
+  methods: {
+    showData(data) {
+      this.step = 2;
+      this.$refs.showTextView.show(data);
+    },
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
