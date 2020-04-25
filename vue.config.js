@@ -7,10 +7,13 @@ module.exports = {
       }
     }
   },
+
   pluginOptions: {
     'cube-ui': {
       postCompile: false,
       theme: false
     }
-  }
+  },
+
+  publicPath: ''
 }
