@@ -32,7 +32,7 @@ export default {
               {
                 type: "input",
                 modelKey: "text",
-                label: "Input",
+                label: "显示内容",
                 props: {
                   placeholder: "请输入",
                 },
@@ -53,7 +53,7 @@ export default {
               {
                 component: ColorSelect,
                 modelKey: "backgroundColor",
-                label: "背景色",
+                label: "背景颜色",
                 rules: {
                   required: true,
                 },
