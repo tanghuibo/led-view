@@ -6,7 +6,7 @@
       class="textView"
     >
       <div class="textViewContainer">
-        <marquee scrollamount="30" class="marqueeView">
+        <marquee :scrollamount="speed" class="marqueeView">
           {{ this.text }}
         </marquee>
       </div>
@@ -22,6 +22,7 @@ export default {
       text: "",
       textColor: "red",
       backgroundColor: "black",
+      speed: 30
     };
   },
   methods: {
@@ -30,7 +31,7 @@ export default {
       this.text = data.text;
       this.textColor = data.textColor;
       this.backgroundColor = data.backgroundColor;
-      console.log(data);
+      this.speed = data.speed;
     },
   },
 };

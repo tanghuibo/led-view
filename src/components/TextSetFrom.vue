@@ -23,6 +23,7 @@ export default {
         text: "让座请叫我",
         textColor: "#FF0000",
         backgroundColor: "#000000",
+        speed: 30
       },
       schema: {
         groups: [
@@ -58,6 +59,24 @@ export default {
                   required: true,
                 },
               },
+              {
+                type: 'radio-group',
+                modelKey: 'speed',
+                label: '播放速度',
+                props: {
+                  options: [{
+                    label: "慢", value: 10
+                  }, {
+                    label: "一般", value: 30
+                  }, {
+                    label: "快", value: 50
+                  }],
+                  horizontal: true
+                },
+                rules: {
+                  required: true
+                }
+              }
             ],
           },
           {
@@ -72,7 +91,7 @@ export default {
       },
       options: {
         scrollToInvalidField: true,
-        layout: "standard", // classic fresh
+        layout: "standard"
       },
     };
   },
